@@ -41,9 +41,16 @@
         var button_text = button.text();
 
         $.ajax({
-          url: "add_question.php",
+          url: "ajax/add_question.php",
+          data: {
+            category: $("#category").val(),
+            question: $("#question").val(),
+            answer: $("#answer").val()
+          },
+          datatype: "json",
           type: "POST",
           success: function(data) {
+            console.log(data);
             var response = $.parseJSON(data);
             var done = response.done;
             var message = response.message;
@@ -120,7 +127,7 @@
       // category type-ahead
       $('#category').typeahead({
         source: function (query, process) {
-          return $.get('categories.php', { query: query }, function (data) {
+          return $.get('ajax/categories.php', { query: query }, function (data) {
             return process(data.options);
           });
         }
