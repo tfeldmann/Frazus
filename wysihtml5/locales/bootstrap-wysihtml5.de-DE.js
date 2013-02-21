@@ -4,15 +4,15 @@
 (function($){
     $.fn.wysihtml5.locale["de-DE"] = {
         font_styles: {
-            normal: "Normaler Text",
+            normal: "Text",
             h1: "Überschrift 1",
             h2: "Überschrift 2",
             h3: "Überschrift 3"
         },
         emphasis: {
-            bold: "Fett",
-            italic: "Kursiv",
-            underline: "Unterstrichen"
+            bold: "F",
+            italic: "I",
+            underline: "U"
         },
         lists: {
             unordered: "Ungeordnete Liste",
