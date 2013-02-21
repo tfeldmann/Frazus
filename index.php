@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="An easy to use question management system">
     <meta name="author" content="Thomas Feldmann">
+    <link rel="shortcut icon" href="favicon.ico">
 
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
