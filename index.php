@@ -41,7 +41,7 @@
         var button_text = button.text();
 
         $.ajax({
-          url: "api/add_question.php",
+          url: "add_question.php",
           type: "POST",
           success: function(data) {
             var response = $.parseJSON(data);
@@ -126,7 +126,7 @@
       // category type-ahead
       $('#category').typeahead({
         source: function (query, process) {
-          return $.get('api/categories.php', { query: query }, function (data) {
+          return $.get('categories.php', { query: query }, function (data) {
             return process(data.options);
           });
         }
