@@ -31,6 +31,52 @@
     <!--[if lt IE 9]>
       <script src="bootstrap/js/html5shiv.js"></script>
     <![endif]-->
+
+    <script type="text/javascript">
+
+      function add_question(event) {
+        // set button to loading state
+        var button = $("#add_question");
+        button.button("loading");
+        var button_text = button.text();
+
+        $.ajax({
+          url: "api/add_question.php",
+          type: "POST",
+          success: function(data) {
+            var response = $.parseJSON(data);
+            var done = response.done;
+            var message = response.message;
+
+            // show checkmark on button
+            if (done) {
+              button.append(" <i class='icon-ok'></i>");
+            }
+            else {
+              bootstrap_alert.error(message);
+            }
+
+            // after 2 seconds
+            window.setTimeout(function() {
+              // reset button
+              button.text(button_text);
+              button.button("reset");
+
+              // clear question and answer
+              if (done) {
+                $("#question").data("wysihtml5").editor.clear();
+                $("#answer").data("wysihtml5").editor.clear();
+              }
+            }, 2000);
+          }
+        });
+      }
+
+      bootstrap_alert = function() {}
+      bootstrap_alert.error = function(message) {
+        $('#alert_placeholder').html('<div class="alert alert-error"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>')
+      }
+    </script>
   </head>
 
   <body>
@@ -46,11 +92,14 @@
         <h3 class="muted">Frazus <i class="icon-lightbulb"></i></h3>
       </div>
       <div class="row-fluid">
+        <div id="alert_placeholder"></div>
         <div class="well">
           <input type="text" id="category" class="input-xxlarge" placeholder="Kategorie" data-provide="typeahead" data-items="4">
+          <textarea rows="5" id="question" class="input-xxlarge" placeholder="Frage"></textarea>
+          <textarea rows="5" id="answer" class="input-xxlarge" placeholder="Antwort"></textarea>
         </div>
         <div class="form-actions">
-          <button type="submit" class="btn btn-primary"><i class="icon-ok"></i> Hinzufügen</button>
+          <button type="button" class="btn btn-primary" id="add_question" data-loading-text="Wird hinzugefügt..." onclick="add_question(event)">Hinzufügen</button>
         </div>
       </div>
 
