@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Frazus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="An easy to use question management system">
     <meta name="author" content="Thomas Feldmann">
 
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -43,7 +43,7 @@
           <li><a href="#" title="Offene Fragen"><i class="icon-warning-sign"></i></a></li>
           <li><a href="#" title="Fragenkatalog"><i class="icon-check"></i></a></li>
         </ul>
-        <h3 class="muted">Frazus</h3>
+        <h3 class="muted">Frazus <i class="icon-lightbulb"></i></h3>
       </div>
       <div class="row-fluid">
         <div class="well">
@@ -57,7 +57,7 @@
       <hr>
 
       <div class="footer">
-        <p>&copy; Roboterfabrik 2013</p>
+        <p>&copy; Thomas Feldmann 2013</p>
       </div>
 
     </div> <!-- /container -->
