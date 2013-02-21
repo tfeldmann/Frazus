@@ -100,15 +100,9 @@
         </div>
         <div class="form-actions">
           <button type="button" class="btn btn-primary" id="add_question" data-loading-text="Wird hinzugefügt..." onclick="add_question(event)">Hinzufügen</button>
+          <p class="pull-right muted">&copy;2013 Thomas Feldmann</p>
         </div>
       </div>
-
-      <hr>
-
-      <div class="footer">
-        <p>&copy; Thomas Feldmann 2013</p>
-      </div>
-
     </div> <!-- /container -->
 
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
