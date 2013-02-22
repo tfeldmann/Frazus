@@ -25,21 +25,28 @@ class Model
      */
     function add_question($category, $question, $answer)
     {
-        // check if category already exists
+        // category
         $query = mysql_query("SELECT id
                                 FROM categories
-                               WHERE name = $category
+                               WHERE name = '$category'
                                LIMIT 1");
-        if (!$query)
+        if (!$query) return false;
+
+        if (mysql_num_rows($query) == 0)
         {
             $category_id = $this->add_category($category);
         }
         else
         {
             $id = mysql_fetch_array($query);
-            if (!$id) return false;
             $category_id = $id[0];
         }
+
+        // insert question and answer
+        $query = mysql_query(
+            "INSERT INTO questions (question, answer, category)
+                  VALUES ('$question', '$answer', $category_id)");
+        if (!$query) return false;
 
         return true;
     }
