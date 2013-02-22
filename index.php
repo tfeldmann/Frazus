@@ -93,9 +93,8 @@
 
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#" title="Frage hinzufügen"><i class="icon-plus"></i></a></li>
-          <li><a href="#" title="Offene Fragen"><i class="icon-warning-sign"></i></a></li>
-          <li><a href="#" title="Fragenkatalog"><i class="icon-check"></i></a></li>
+          <li class="active"><a href="" title="Frage hinzufügen"><i class="icon-plus"></i></a></li>
+          <li><a href="questions.php" title="Fragenkatalog"><i class="icon-check"></i></a></li>
         </ul>
         <h3 class="muted">Frazus <i class="icon-lightbulb"></i></h3>
       </div>
@@ -108,7 +107,6 @@
         </div>
         <div class="form-actions">
           <button type="button" class="btn btn-primary" id="add_question" data-loading-text="Wird hinzugefügt..." onclick="add_question(event)">Hinzufügen</button>
-          <p class="pull-right muted">&copy;2013 Thomas Feldmann</p>
         </div>
       </div>
     </div> <!-- /container -->
