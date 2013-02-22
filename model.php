@@ -52,6 +52,21 @@ class Model
     }
 
 
+    function list_questions()
+    {
+        $query = mysql_query("SELECT question, answer, category
+            FROM questions ORDER BY timestamp DESC");
+
+        $questions = array();
+        while ($question = mysql_fetch_array($query))
+        {
+            $questions[] = $question;
+        }
+
+        return $questions;
+    }
+
+
     /**
      * List all available categories
      * @return array list of all categories
